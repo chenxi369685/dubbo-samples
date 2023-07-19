@@ -40,7 +40,7 @@ public class TriUnaryServer {
         DubboBootstrap bootstrap = DubboBootstrap.getInstance();
         bootstrap.application(applicationConfig)
                 .registry(new RegistryConfig(TriSampleConstants.ZK_ADDRESS))
-                .protocol(new ProtocolConfig(CommonConstants.TRIPLE, TriSampleConstants.SERVER_PORT))
+                .protocol(new ProtocolConfig("triple", TriSampleConstants.SERVER_PORT))
                 .service(service)
                 .start();
         System.out.println("Dubbo triple unary server started, port=" + TriSampleConstants.SERVER_PORT);
